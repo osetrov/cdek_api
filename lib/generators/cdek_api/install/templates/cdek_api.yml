@@ -1,0 +1,16 @@
+defaults: &defaults
+  GRANT_TYPE: 'client_credentials'
+  CLIENT_ID: 'EMscd6r9JnFiQ3bLoyjJY6eM78JrJceI'
+  CLIENT_SECRET: 'PjLZkKBHEiLK3YsjtNrt3TGNG0ahs3kG'
+  URL_TOKEN: 'https://api.edu.cdek.ru/v2/oauth/token?parameters'
+  HOST: 'https://api.edu.cdek.ru'
+production:
+  <<: *defaults
+  URL_TOKEN: 'https://api.cdek.ru/v2/oauth/token?parameters'
+  HOST: 'https://api.cdek.ru'
+  CLIENT_ID: ''
+  CLIENT_SECRET: ''
+development:
+  <<: *defaults
+test:
+  <<: *defaults
