@@ -154,7 +154,7 @@ module CdekApi
       rescue MultiJson::ParseError
       end
 
-      error_to_raise = OzonError.new(error.message, error_params)
+      error_to_raise = Error.new(error.message, error_params)
 
       raise error_to_raise
     end
@@ -193,7 +193,7 @@ module CdekApi
           parsed_response = Response.new(headers: headers, body: body)
         rescue MultiJson::ParseError
           error_params = { title: "UNPARSEABLE_RESPONSE", status_code: 500 }
-          error = OzonError.new("Unparseable response: #{response.body}", error_params)
+          error = Error.new("Unparseable response: #{response.body}", error_params)
           raise error
         end
       end

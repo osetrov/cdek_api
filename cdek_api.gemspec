@@ -1,6 +1,10 @@
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'cdek_api/version'
+
 Gem::Specification.new do |s|
   s.name        = 'cdek_api'
-  s.version     = '0.0.1'
+  s.version     = CdekApi::VERSION
   s.date        = '2022-08-03'
   s.summary     = "CDEK API"
   s.description = ""
@@ -15,5 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency('multi_json', '>= 1.11.0')
 
   s.require_paths = ["lib"]
-  s.required_ruby_version = '>= 2.3.8'
+  s.required_ruby_version = '>= 2.5'
 end

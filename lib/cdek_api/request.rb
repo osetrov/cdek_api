@@ -12,7 +12,7 @@ module CdekApi
       @api_endpoint = api_endpoint || self.class.api_endpoint
       @timeout = timeout || self.class.timeout || DEFAULT_TIMEOUT
       @open_timeout = open_timeout || self.class.open_timeout || DEFAULT_OPEN_TIMEOUT
-      @proxy = proxy || self.class.proxy || ENV['OZON_LOGISTICS_PROXY']
+      @proxy = proxy || self.class.proxy || ENV['CDEK_PROXY']
       @faraday_adapter = faraday_adapter || self.class.faraday_adapter || Faraday.default_adapter
       @symbolize_keys = symbolize_keys || self.class.symbolize_keys || false
       @debug = debug || self.class.debug || false
