@@ -253,3 +253,9 @@ CdekApi::Request.deliverypoints.retrieve(params: {weight_max: 50, city_code: 270
 ```ruby
 CdekApi::Request.location.regions.retrieve.body
 ```
+
+### [Список населенных пунктов](https://api-docs.cdek.ru/33829437.html).
+
+```ruby
+CdekApi::Request.location.cities.retrieve(params: {city: "Санкт-Петербург"}).body
+```
