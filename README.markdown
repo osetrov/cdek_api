@@ -248,6 +248,62 @@ CdekApi::Request.orders("72753031-826d-4ef7-b127-1074f405b269").refusal.create.b
 CdekApi::Request.deliverypoints.retrieve(params: {weight_max: 50, city_code: 270, allowed_cod: 1}).body
 ```
 
+### [Калькулятор. Расчет по доступным тарифам](https://api-docs.cdek.ru/63345519.html).
+```ruby
+request = {
+  "type": 1,
+  "date": "2020-11-03T11:49:32+0700",
+  "currency": 1,
+  "lang": "rus",
+  "from_location": {
+    "code": 270
+  },
+  "to_location": {
+    "code": 44
+  },
+  "packages": [
+    {
+      "height": 10,
+      "length": 10,
+      "weight": 4000,
+      "width": 10
+    }
+  ]
+}
+CdekApi::Request.calculator.tarifflist.create(body: request).body
+```
+
+### [Калькулятор. Расчет по коду тарифа](https://api-docs.cdek.ru/63345430.html).
+```ruby
+request = {
+  "type": "2",
+  "date": "2020-11-03T11:49:32+0700",
+  "currency": "1",
+  "tariff_code": "11",
+  "from_location": {
+    "code": 270
+  },
+  "to_location": {
+    "code": 44
+  },
+  "services": [
+    {
+      "code": "CARTON_BOX_XS",
+      "parameter": "2"
+    }
+  ],
+  "packages": [
+    {
+      "height": 10,
+      "length": 10,
+      "weight": 4000,
+      "width": 10
+    }
+  ]
+}
+CdekApi::Request.calculator.tariff.create(body: request).body
+```
+
 ### [Список регионов](https://api-docs.cdek.ru/33829418.html).
 
 ```ruby
